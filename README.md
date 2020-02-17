@@ -1,4 +1,5 @@
-# flask-app
+
+# Music-Genre-Predict-App
 
 ## Project setup
 ```
