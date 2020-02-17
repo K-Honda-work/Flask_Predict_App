@@ -1,9 +1,11 @@
 
 # Music-Genre-Predict-App
 
-# URL
+## URL
 ### <https://atsu-musicgenre.ddo.jp/>
 
+## Description
+### The address of the API is not written just in case :-)
 ## Project setup
 ```
 npm install
