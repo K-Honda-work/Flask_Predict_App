@@ -12,7 +12,7 @@ Upload MusicFile (mp3,wav ...)
 The address of the API is not written just in case :-)
 
 ## System Requirements
-   OS   :   MacOS HighSierra later
+   OS   :   MacOS HighSierra later (it may run with Windows...)
    
 Browser :   FireFox, GoogleChrome
 
