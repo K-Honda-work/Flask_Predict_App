@@ -2,7 +2,7 @@
 # Music-Genre-Predict-App
 
 # URL
-### <atsu-musicgenre.ddo.jp/>
+### <https://atsu-musicgenre.ddo.jp/>
 
 ## Project setup
 ```
