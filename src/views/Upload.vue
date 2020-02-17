@@ -1,10 +1,9 @@
 <template>
     <div  class="window-height window-width row justify-center items-center"
-    style="background: linear-gradient(135deg,  #151515  0%,#282828 100%)">
-
+    style="background: linear-gradient(135deg,  #151515  0%,#FFFFFF 100%)">
       <div class="column">
       <div class="row">
-        <q-card square dark class="q-pa-md q-ma-none no-shadow bg-grey-10" style="width:40vw;">
+        <q-card square dark class="q-pa-md q-ma-none no-shadow bg-grey-10" style="width:60vw;">
           <q-card-section class="q-mt-xl q-mb-md">
             <p class="text-center text-weight-bolder text-white">Upload Your Music</p>
           </q-card-section>
@@ -19,9 +18,9 @@
                 <q-icon name="search" @click.stop color="white" />
               </template>
 
-              <template v-slot:hint id="form">
+              <!-- <template v-slot:hint id="form">
                 Field hint
-              </template>
+              </template> -->
             </q-file>
           </q-card-section>
           <q-card-actions>
@@ -31,8 +30,15 @@
               </div>
             </div>
           </q-card-actions>
-          <q-card-section>
-            <p class="text-center text-caption text-weight-light text-grey">Created by Test_Name</p>
+          <q-card-section style="height:10%;">
+            <p class="text-center text-caption text-weight-light text-grey">Created by AMG</p>
+          </q-card-section>
+          <q-card-section class="row justify-center full-width">
+            <img
+            src="@/logo.png"
+            spinner-color="white"
+            style="width:30%;"
+            />
           </q-card-section>
         </q-card>
       </div>
@@ -41,37 +47,49 @@
     </div>
 </template>
 <script>
-
+import axios from 'axios'
+axios.defaults.headers.post['Content-Type'] = 'multipart/form-data';  //'application/json;charset=utf-8';
+axios.defaults.headers.post['Access-Control-Allow-Origin'] = '*';
 export default {
-
   data () {
     return {
-      file : null
+      file : null,
+      result : "Nothing",
+      formData : null,
     }
   },
   methods : {
-    selectedFile: function() {
+    selectedFile(){
       // 選択された File の情報を保存しておく
-      this.file = this.$refs.file.files[0];
+      this.file = this.$refs.file.files[0]
     },
-    submitFile:async function(){
-      let formData = new FormData();
-      formData.append('file', this.file);
-      let result = "nothing"
-      await this.$axios.post('http://34.68.147.55/predict',
-        formData,
-        { 
-          headers: { 'Content-Type': 'multipart/form-data' }
-       }
-      ).then(function(res){
-        result = res.data;
-        //this.$router.push({name: 'result', params: {res: res.data}})
-      })
-      .catch(function(){
-        console.log('FAILURE!!');
-      });
-      this.$router.push({name: 'result', params: {res: result}})
+    async submitFile(){
+      if(this.file)
+      {
+        this.formData = new FormData();
+        this.formData.append('file', this.file);
+
+        let config = {
+          headers: {
+            'content-type': 'multipart/form-data',
+          }
+        };
+
+        await axios.post(
+          "https://example.com/api",  //change your api url
+          this.formData,
+          config
+        )
+        .then(res => this.result = res.data.genre)
+        .catch(err => this.result = err);
+
+        //console.log(this.result)
+
+        this.$router.push({name: 'result', params: {res: this.result}})
+
+      } 
     }
+
   }
 }
 </script>
