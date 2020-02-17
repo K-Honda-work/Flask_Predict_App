@@ -6,11 +6,14 @@
 
 ## Description
 The App predict Your Music Genre!
+
 Upload MusicFile (mp3,wav ...)
+
 The address of the API is not written just in case :-)
 
 ## System Requirements
    OS   :   MacOS HighSierra later
+   
 Browser :   FireFox, GoogleChrome
 
 ## Project setup
