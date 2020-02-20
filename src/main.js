@@ -6,7 +6,8 @@ import axios from 'axios'
 
 
 Vue.config.productionTip = false
-Vue.prototype.$axios = axios;
+axios.defaults.headers.post["Content-Type"] = "application/x-www-form-urlencoded";
+window.axios = axios;
 
 new Vue({
   router,

@@ -9,6 +9,7 @@
             <p class="text-center text-weight-bolder text-white">Result Your Music Genre</p>
           </q-card-section>
           <q-card-section color="white">
+            <h4 class="text-center text-weight-bolder text-white">Your Music Genre is</h4>
             <h3 class="text-center text-weight-bolder text-white">{{ $route.params.res }}</h3>
           </q-card-section>
           <q-card-actions>

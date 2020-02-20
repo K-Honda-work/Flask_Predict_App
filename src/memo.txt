@@ -1,0 +1,10 @@
+<VirtualHost *:80>
+  WSGIScriptAlias / "/home/dev/DnoIshi/wsgi.py"
+  <Directory /home/dev/DnoIshi>
+     # Apache2.4
+     <Files wsgi.py>
+        Require all granted
+     </Files>
+  </Directory>
+</VirtualHost>
+WSGIPythonPath /home/dev/DnoIshi

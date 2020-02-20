@@ -1,0 +1,26 @@
+.background{
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background: url(background.jpg);
+}
+.justify{
+    position: absolute;
+    height: 25%;
+    width: 100%;
+}
+.upper{
+    top: 0;
+}
+.upper{
+    top: 25%;
+}
+.upper{
+    top: 50%;
+}
+.upper{
+    top: 75%;
+}
+.card{
+    
+}
