@@ -25,10 +25,3 @@ npm run build
 ```
 npm run lint
 ```
-## Server Setup
-### Start Flask Server
-```
-python app.py
-```
-### Go
-### http://localhost:5000
